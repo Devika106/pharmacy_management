@@ -1,0 +1,30 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<h2>Purchase Madicine</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="customer">Customer Name:</label>
+    <input type="text" name="customer" required>
+
+    <label for="medicine">Select Medicine:</label>
+    <select name="medicine">
+        {% for medicine in medicines %}
+        <option value="{{ medicine.id }}">{{ medicine.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" min="1" required>
+
+    <button type="submit">Generate Bill</button>
+</form>
+<div style="text-align: center; margin-top: 20px;">
+   
+    <!-- ✅ Add margin-left to create a gap -->
+    <a href="{% url 'bill_detail' %}" class="btn btn-primary" style="padding: 10px 30px; font-size: 16px; margin-left: 20px;">View Bills</a>
+</div>
+
+
+{% endblock %}

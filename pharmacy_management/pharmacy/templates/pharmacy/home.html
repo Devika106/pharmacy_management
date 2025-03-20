@@ -1,0 +1,27 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+
+<h1><center><b>HAPPY PHARMACY</b></center>
+{% block title %}
+<h2>Welcome to Happy pharmacy...!</h2>
+ 
+{% endblock %}    
+
+
+
+ <h3><center><i>"Good  days based on some bad days... So don't lose your hope"</i></center></h3>
+ 
+ 
+ 
+ <h1><center>VISION</center></h1>
+ <p>To be a trusted resource for medication information and a champion of patient well-being in our community. </p>
+    <h1><center>MISSION</center></h1>
+  <p> To improve the health and well-being of our patients through safe, effective, and accessible medication management and pharmaceutical care.</p>
+
+<div>
+    <p>Manage medicines, customers, and billing efficiently.</p>
+    <a href="{% url 'medicine_list' %}" class="btn">View Medicines</a>
+    <a href="{% url 'billing' %}" class="btn">Purchase medicine</a>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Bill Details</h2>
+
+    <div class="card shadow-sm p-4">
+        <h4>Customer: <strong>{{ bill.customer }}</strong></h4>
+        <p>Medicine: <strong>{{ bill.medicine.name }}</strong></p>
+        <p>Quantity: <strong>{{ bill.quantity }}</strong></p>
+        <p>Total Price: <strong>₹{{ bill.total_price }}</strong></p>
+        <p>Date: <strong>{{ bill.date }}</strong></p>
+
+        <a href="{% url 'bill_detail' %}" class="btn btn-secondary mt-3">Back to Bills</a>
+    </div>
+</div>
+{% endblock %}
